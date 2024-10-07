@@ -18,4 +18,4 @@ This project involves developing a solution for extracting data from invoice PDF
 - Necessary Python packages (pandas, spacy, PyPDF2, pytesseract, pdf2image, opencv-python)
 
 ## Directory Structure
-
+project_root/ ├── data/ │ └── sample_invoices/ # Place your PDF files here ├── extracted_data/ # Extracted CSVs will be saved here ├── logs/ # Logs will be saved here └── src/ # Source code folder ├── data_extractor.py ├── pdf_processor.py └── ocr_processor.py
