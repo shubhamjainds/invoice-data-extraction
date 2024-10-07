@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Information from Invoices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Extract Information from Invoices</h1>
+
+    <form id="invoice-form">
+        <label for="folder">Select Invoice Folder:</label><br>
+        <input type="file" id="folder" webkitdirectory directory multiple><br><br>
+        <button type="button" onclick="handleFormSubmit()">Submit</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        // Simulate your already prepared function
+        function extractInvoiceData() {
+            // This function returns true or false depending on your extraction logic
+            // Here we're simulating the process, replace with your actual logic
+            return Math.random() < 0.5; // Simulate success/failure randomly
+        }
+
+        function handleFormSubmit() {
+            const folderInput = document.getElementById('folder');
+            
+            if (folderInput.files.length === 0) {
+                document.getElementById('message').innerText = 'Please select a folder containing invoices.';
+                return;
+            }
+
+            // Call the function that performs extraction
+            const result = extractInvoiceData();
+
+            if (result) {
+                document.getElementById('message').innerText = 'Data has been extracted and is available in the invoices location.';
+            } else {
+                document.getElementById('message').innerText = 'Extraction failed. Please try again or check the folder contents.';
+            }
+        }
+    </script>
+
+</body>
+</html>
